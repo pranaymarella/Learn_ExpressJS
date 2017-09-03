@@ -41,3 +41,30 @@ app.get('/things', function(req, res) {
 
 app.listen(3000);
 ```
+
+## Order Matters
+
+The order that the middleware functions are written in the file is also the sequence in how the functions are executed.
+
+Example:
+
+```javascript
+var express = require('express');
+var app = expres();
+
+app.use(function(req, res, next) {
+    console.log('Start');
+    next();
+});
+
+app.get('/', function(req, res, next) {
+    res.send("Middle");
+    next();
+});
+
+app.use('/', function(req, res) {
+    console.log('End');
+});
+
+app.listen(3000);
+```
