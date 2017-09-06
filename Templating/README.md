@@ -48,3 +48,5 @@ app.get('/first_template', function(req, res) {
 
 app.listen(3000);
 ```
+
+## Important Features of PUG
