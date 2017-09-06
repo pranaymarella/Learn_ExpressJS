@@ -1,5 +1,14 @@
-extends layout
-
-block content
-  h1= title
-  p Welcome to #{title}
+//extends layout
+//
+//block content
+//  h1= title
+//  p Welcome to #{title}
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    div#particle-canvas
+    script(src="/javascript/particle-network.min.js")
+    script(src="/javascripts/particle_canvas.js")
